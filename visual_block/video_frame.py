@@ -7,8 +7,7 @@ from typing import Callable
 
 class VideoFrame(ctk.CTkFrame):
     def __init__(self, master: ctk.CTk, 
-                getvideoframe: Callable[[int, int], Image.Image], 
-                
+                getvideoframe: Callable[[int, int], Image.Image],
                     *args, **kwargs):
         super().__init__(master, *args, **kwargs)
         self.get_video_frame = getvideoframe  

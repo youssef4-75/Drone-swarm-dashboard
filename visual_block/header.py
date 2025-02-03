@@ -1,13 +1,12 @@
 import customtkinter as ctk
 
-from functional_layer import func1, func2, func3
+from function_block import func1, func2, func3
 
 class Header(ctk.CTkFrame):
 
     def __init__(self,
                 master,
                 name_and_functions_list = None,
-
                 width = 200,
                 height = 200,
                 corner_radius = None,

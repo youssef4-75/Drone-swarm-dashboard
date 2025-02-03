@@ -7,6 +7,7 @@ class Body(ctk.CTkFrame):
     def __init__(self,
                 master,
                 text,
+                data=None,
                 width = 200,
                 height = 200,
                 corner_radius = None,
@@ -23,8 +24,24 @@ class Body(ctk.CTkFrame):
             
             **kwargs)
 
-        info_label = ctk.CTkLabel(self, text=text)
-        info_label.pack(expand=True)
+
+        self.text = text
+        text_ = ""
+        if data is None: data = {}
+        if not isinstance(data, dict): raise Exception("data must be a dict")
+        for key, value in data.items():
+            text_ += f"\n{key}: {value}"
+        self.info_label = ctk.CTkLabel(self, text=text + text_)
+        self.info_label.pack(expand=True)
+
+    def update_data(self, data=None):
+        if data is None: data = {}
+        if not isinstance(data, dict): raise Exception("data must be a dict")
+        text_ = ""
+        for key, value in data.items():
+            text_ += f"\n{key}: {value}"
+        self.info_label.configure(text=self.text + text_)
+
         
     def go_grid(self, *, row, column, columnspan=None, rowspan=None):
         self.grid(row=row, column=column,
