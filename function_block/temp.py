@@ -12,6 +12,8 @@ def func2():
 def func3():
     print("Function 3 executed")
 
+def btn():
+    ...
 
 
 

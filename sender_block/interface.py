@@ -1,6 +1,11 @@
 
 import customtkinter as ctk
 from om import OM
+# from function_block import btn
+
+
+def btn():...
+
 
 
 
@@ -31,7 +36,7 @@ def main():
     info_frame.grid(row=0, column=2, rowspan=2, padx=10, columnspan=2)
 
 
-    button = ctk.CTkButton(root)
+    button = ctk.CTkButton(root, command=btn)
     button.pack(fill="x", expand=False, padx=10, pady=5, side=ctk.BOTTOM)
 
 
