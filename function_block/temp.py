@@ -1,6 +1,5 @@
 from PIL import Image
-from threading import Thread
-from time import sleep
+
 
 
 def func1():
@@ -28,15 +27,8 @@ def get_data(type):
     data = {}
     return data
 
-def launch(*layers):
-    def loop(bloc, type_):
-        while True:
-            bloc.update_data(get_data(type_))
-            sleep(.01)
-    for lay in layers:
-        th = Thread(target=lambda :loop(lay, None), daemon=True)
-        th.start()
 
     
+
 
 
